@@ -72,7 +72,14 @@ export default function ProductListPage() {
               <p className="text-lg font-bold text-neutral-900">{formatPrice(product.priceCents)}</p>
               <button
                 type="button"
-                onClick={() => addItem(product)}
+                onClick={() =>
+                  addItem({
+                    productId: product.id,
+                    name: product.name,
+                    priceCents: product.priceCents,
+                    imageUrl: product.imageUrl
+                  })
+                }
                 className="mt-auto rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-900"
               >
                 Add to cart
